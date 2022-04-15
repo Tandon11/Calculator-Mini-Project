@@ -1,0 +1,11 @@
+---
+- name: Pull docker image of Calculator
+  hosts: all
+  tasks:
+    - name: Pull image
+      docker_image:
+        name: tandon11/calculatorminiproject
+        source: pull
+        
+    - name: running container
+      shell: docker run -it -d tandon11/calculatorminiproject /bin/bash
